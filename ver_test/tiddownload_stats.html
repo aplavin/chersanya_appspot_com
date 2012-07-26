@@ -1,0 +1,128 @@
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script>
+	google.load('visualization', '1');
+	google.setOnLoadCallback(drawAll);
+	
+	function drawAll() {
+		google.visualization.drawChart({
+			chartType: 'ColumnChart',
+			dataTable: {{error_reports_json}},
+			options: {
+				showRowNumber: true,
+				title: 'Error reports by app version',
+				hAxis: {title: 'Version'},
+				vAxis: {title: 'Number of reports'},
+				height: 400
+			},
+			containerId: 'error_reports_chart',
+		})
+		
+		google.visualization.drawChart({
+			chartType: 'LineChart',
+			dataTable: {{songs_json}},
+			options: {
+				showRowNumber: true,
+				title: 'Searches by date',
+				height: 400
+			},
+			containerId: 'songs_chart',
+		});
+		
+		google.visualization.drawChart({
+			chartType: 'LineChart',
+			dataTable: {{logs_json}},
+			options: {
+				showRowNumber: true,
+				title: 'Requests by date',
+				height: 400
+			},
+			containerId: 'logs_chart',
+		});
+	}
+	
+	var curSongChart = ""
+	
+	function switchSongChart() {
+		if(curSongChart == "aggr") {
+			google.visualization.drawChart({
+				chartType: 'LineChart',
+				dataTable: {{songs_json}},
+				options: {
+					showRowNumber: true,
+					title: 'Searches by date',
+					height: 400
+				},
+				containerId: 'songs_chart',
+			});
+			
+			curSongChart = ""
+		}
+		else {
+			google.visualization.drawChart({
+				chartType: 'LineChart',
+				dataTable: {{songs_aggr_json}},
+				options: {
+					showRowNumber: true,
+					title: 'Searches by date (aggregated)',
+					height: 400
+				},
+				containerId: 'songs_chart',
+			});
+			
+			curSongChart = "aggr"
+		}
+	}
+</script>
+
+<h2 style="text-align: center">Error reports</h2>
+<div id="error_reports_chart" style="width: 60%; float: left"></div>
+<div style="width: 40%; float: left">
+	<table width="90%">
+		<thead>
+			<th colspan="2"><h3>Some statistics</h3></th>
+		</thead>
+	# for key, value in error_reports_stats:
+		<tr>
+			<th>{{key}}</th>
+			<td>{{value}}</td>
+		</tr>
+	# endfor
+	</table>
+</div>
+<br style="clear:both" />
+
+<h2 style="text-align: center">Songs searched</h2>
+<button onclick="switchSongChart()">Switch chart</button>
+<div id="songs_chart" style="width: 60%; float: left"></div>
+<div style="width: 40%; float: left">
+	<table width="90%">
+		<thead>
+			<th colspan="2"><h3>Some statistics</h3></th>
+		</thead>
+	# for key, value in songs_stats:
+		<tr>
+			<th>{{key}}</th>
+			<td>{{value}}</td>
+		</tr>
+	# endfor
+	</table>
+</div>
+<br style="clear:both" />
+
+
+<h2 style="text-align: center">Requests</h2>
+<div id="logs_chart" style="width: 60%; float: left"></div>
+<div style="width: 40%; float: left">
+	<table width="90%">
+		<thead>
+			<th colspan="2"><h3>Some statistics</h3></th>
+		</thead>
+	# for key, value in logs:
+		<tr>
+			<th>{{key}}</th>
+			<td>{{value}}</td>
+		</tr>
+	# endfor
+	</table>
+</div>
+<br style="clear:both" />

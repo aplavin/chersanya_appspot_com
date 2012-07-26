@@ -1,0 +1,13 @@
+# include 'header.html'
+<div class="post">
+	<h2><a href="{{uri_for('app_page', lang = lang, app_name = name)}}">{{name}}</a></h2>
+	<div class="post-info">Версия: {{version}} <span class="sep">|</span> Последнее обновление: {{date.strftime('%d.%m.%Y')}}</div>
+	# if scs_cnt:
+	# for i in range(scs_cnt):
+		<img src="{{uri_for('img', app_name = name, img_num = str(i))}}">
+	# endfor
+	# endif
+	<p>{{text.replace('\n', '<br/>')}}</p>
+	<a href="{{uri_for('apk', app_name = name)}}">Загрузить {{app_name}}.apk</a>
+ </div>
+# include 'footer.html'

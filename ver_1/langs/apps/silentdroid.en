@@ -1,0 +1,16 @@
+SilentDroid
+silentdroid
+01.05.2012 21:37
+1.0.1
+SilentDroid.apk
+silentdroid1en.png silentdroid2en.png 
+SilentDroid is a small but useful application for many Android users: it silences your mobile and turns on flight mode when you don't want your phone to disturb you. To show SilentDroid that you want the mobile to be quite, just put it anywhere with screen down. After some minutes flight and no sound modes will be turned on. For example, it's convenient to put phone such way at night. Of course, if you don't want both actions, you can go to settings and disable unneeded features.
+
+Last changes:
+- SilentDroid switches off flight mode when the phone alarm rings
+- while alarm is ringing, flashlight flashes
+- it's possible to turn off any use of flashlight in settings
+
+Previous changes:
+- when you take the mobile, SilentDroid momentarily recognizes this
+- Russian translation

@@ -1,0 +1,24 @@
+TrackID Download
+tiddownload
+08.05.2012 11:13
+1.0.4
+TrackID Download.apk
+tiddownload_ru.png
+TrackID Download allows you to download music found by TrackID or Shazam app easily and for free.
+For downloading songs any installed browser is used.
+Usage (TrackID): after TrackID recognized a song, click there "Download" and select to open with this application.
+Usage (Shazam): after Shazam recognized a song, click on Amazon icon and select to open with this application.
+
+1.0.4:
+- bugfix: on Android 3 and later there was always a FC after clicking a song in the list
+
+1.0.3:
+- search from Shazam also available
+- songs with names containing non-english characters are found (was bug)
+- from menu you can search again, for example if any error occured
+- crash reporting added (after a crash you can select whether to send report or not)
+
+1.0.2:
+- additional information about files: size, bitrate
+- icon added
+- Russian translation

@@ -1,0 +1,6 @@
+<a href="{{uri_for('admin_app', app_name='NEW')}}">Add application</a>
+# for app in apps:
+	<div class="post">
+		<h2><a href="{{uri_for('admin_app', app_name = app.name)}}">{{app.name}}</a></h2>
+	 </div>
+# endfor

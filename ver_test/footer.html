@@ -1,0 +1,19 @@
+<div class="footer">
+	<div class="wrap bot-bar">
+    	&copy; 2012 by chersanya
+        <div class="clear-both"></div>
+		# for abbr, name in langs:
+			# if abbr == lang:
+				{{name}}
+			# else:
+				<a href="/{{abbr}}">{{name}}</a>
+			# endif
+			
+			# if not loop.last:
+				<span style="color: white; font-weight: bold">|</span>
+			# endif
+		# endfor
+    </div>
+</div>
+</body>
+</html>

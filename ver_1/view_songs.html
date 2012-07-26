@@ -1,0 +1,22 @@
+# include 'header.html'
+<table width="100%">
+	<thead>
+		<tr>
+			<th>IMEI</th>
+			<th>Songs</th>
+		</tr>
+	</thead>
+	<tbody>
+	# for id, songs in ids:
+		<tr>
+			<td><a href="http://www.numberingplans.com/?page=analysis&sub=imeinr&i={{id}}&button=analyse">{{id}}</a></td>
+			<td>
+				# for date, song in songs:
+					{{song}} <span style="font-style: italic">({{date|time_rel(lang)}})</span><br/>
+				# endfor
+			</td>
+		</tr>
+	# endfor
+	</tbody>
+</table>
+# include 'footer.html'

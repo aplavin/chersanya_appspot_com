@@ -1,0 +1,13 @@
+# include 'header.html'
+<div class="content">
+	<div class="wrap">
+		# for app in apps:
+			<div class="post">
+				<h2><a href="/apps/{{app.page}}.{{lang}}">{{app.name}}</a></h2>
+				<div class="post-info">Version: {{app.ver}} <span class="sep">|</span> Last update: <span title="{{app.date.strftime('%d.%m.%Y %H:%M')}}">{{app.date|time_rel(lang)}}</span></div>
+				<p>{{app.text}}</p>
+			 </div>
+		# endfor
+    </div>
+</div>
+# include 'footer.html'

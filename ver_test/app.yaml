@@ -1,0 +1,28 @@
+application: chersanya
+version: test
+runtime: python27
+api_version: 1
+threadsafe: true
+
+inbound_services:
+- warmup
+
+builtins:
+- remote_api: on
+
+admin_console:
+  pages:  
+  - name: Edit apps
+    url: /admin/apps/
+
+
+handlers:  
+- url: /css
+  static_dir: css
+- url: /.*
+  script: routes.app
+  
+  
+libraries:
+- name: jinja2
+  version: latest

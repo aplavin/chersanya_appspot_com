@@ -1,0 +1,11 @@
+# include 'header.html'
+<div class="post">
+	<h2><a href="/apps/{{app.page}}.{{lang}}">{{app.name}}</a></h2>
+	<div class="post-info">Version: {{app.ver}} <span class="sep">|</span> Last update: <span title="{{app.date.strftime('%d.%m.%Y %H:%M')}}">{{app.date|time_rel(lang)}}</span></div>
+	# for img in app.imgs:
+		<img src="/files/{{img}}"  />
+	# endfor
+	<p>{{app.text}}</p>
+	<a href="/files/{{app.apk}}">Download .apk</a>
+ </div>
+# include 'footer.html'

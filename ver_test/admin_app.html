@@ -1,0 +1,19 @@
+<form method="POST" enctype="multipart/form-data">
+	Name: <input name="name" value="{{name}}"><br/>
+	Version: <input name="version" value="{{version}}"><br/>
+	Russian text: <textarea name="text_ru">{{text_ru}}</textarea> <br/>
+	English text: <textarea name="text_en">{{text_en}}</textarea> <br/>
+	Apk: <input type="file" name="file" /><br/>
+	Screenshot: <input type="file" name="sc0" /><br/>
+	Screenshot: <input type="file" name="sc1" /><br/>
+	Screenshot: <input type="file" name="sc2" /><br/>
+	Screenshot: <input type="file" name="sc3" /><br/>
+	Screenshot: <input type="file" name="sc4" /><br/>
+	# if scs_cnt:
+	# for i in range(scs_cnt):
+		<img src="{{uri_for('img', app_name = name, img_num = str(i))}}">
+	# endfor
+	# endif
+	<br/>
+	<input type="submit" value="Save">
+</form>

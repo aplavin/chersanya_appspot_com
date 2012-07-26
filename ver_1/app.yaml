@@ -1,0 +1,40 @@
+application: chersanya
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  
+- url: /css
+  static_dir: css
+  
+- url: /js
+  static_dir: js
+  
+- url: /receive_device_id/.*
+  script: receive_device_id.app
+  
+- url: /view_device_ids
+  script: view_device_ids.app
+  login: admin
+  
+- url: /receive_song/.*
+  script: receive_song.app
+  
+- url: /view_songs
+  script: view_songs.app
+  login: admin
+  
+- url: /error-report/.*
+  script: error-report.app
+ 
+- url: /files/.*
+  script: files.app
+  
+- url: /.*
+  script: index.app
+  
+libraries:
+- name: jinja2
+  version: latest
